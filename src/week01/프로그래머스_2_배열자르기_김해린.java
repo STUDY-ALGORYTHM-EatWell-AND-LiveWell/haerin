@@ -1,3 +1,5 @@
+package week01;
+
 import java.util.Arrays;
 
 public class 프로그래머스_2_배열자르기_김해린 {

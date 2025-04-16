@@ -1,4 +1,4 @@
-
+package week01;
 
 public class 프로그래머스_3_추석트래픽_김해린 {
     public static void main(String[] args) {

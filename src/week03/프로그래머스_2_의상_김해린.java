@@ -1,5 +1,6 @@
+package week03;
+
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class 프로그래머스_2_의상_김해린 {
     public int solution(String[][] clothes) {

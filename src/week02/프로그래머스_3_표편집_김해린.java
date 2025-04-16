@@ -1,3 +1,5 @@
+package week02;
+
 import java.util.Stack;
 //[참고] https://moonsbeen.tistory.com/294
 public class 프로그래머스_3_표편집_김해린 {

@@ -1,3 +1,5 @@
+package week01;
+
 import java.util.Arrays;
 
 public class 프로그래머스_1_K번째수_김해린 {

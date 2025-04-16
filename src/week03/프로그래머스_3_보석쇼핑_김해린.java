@@ -1,4 +1,5 @@
-import java.awt.*;
+package week03;
+
 import java.util.*;
 
 public class 프로그래머스_3_보석쇼핑_김해린 {
