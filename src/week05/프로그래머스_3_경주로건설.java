@@ -6,15 +6,27 @@ import java.io.*;
 public class 프로그래머스_3_경주로건설 {
     static int[] dx = {0, 0, -1, 1}; // 상 하 좌 우
     static int[] dy = {-1, 1, 0, 0};
+    static int[][][] cost;
+    static int n;
 
     public int solution(int[][] board) {
-        int n = board.length;
-        int[][][] cost = new int[n][n][4]; // 방향별 비용 저장
+        n = board.length;
+        cost = new int[n][n][4]; // 방향별 비용 저장
 
         for (int[][] row : cost)
             for (int[] c : row)
                 Arrays.fill(c, Integer.MAX_VALUE);
 
+        bfs(board);
+        int minCost = Integer.MAX_VALUE;
+        for (int i = 0; i < 4; i++) {
+            minCost = Math.min(minCost, cost[n - 1][n - 1][i]);
+        }
+
+        return minCost;
+    }
+
+    static void bfs(int[][] board) {
         Queue<Spot> q = new LinkedList<>();
 
         // 시작지점에서 우, 하 방향 출발
@@ -38,12 +50,6 @@ public class 프로그래머스_3_경주로건설 {
             }
         }
 
-        int minCost = Integer.MAX_VALUE;
-        for (int i = 0; i < 4; i++) {
-            minCost = Math.min(minCost, cost[n - 1][n - 1][i]);
-        }
-
-        return minCost;
     }
 
     static class Spot {
