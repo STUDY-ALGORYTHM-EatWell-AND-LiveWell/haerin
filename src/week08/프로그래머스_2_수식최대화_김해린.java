@@ -2,20 +2,19 @@ package week08;
 
 import java.util.*;
 import java.io.*;
-public class 프로그래머스_수식최대화_2_김해린 {
+public class 프로그래머스_2_수식최대화_김해린 {
     static boolean[] visited;
     static String[] operator;
     static List<String> list = new ArrayList<>();
     static long max = Long.MIN_VALUE;
 
     public long solution(String expression) {
-        long answer = 0;
-        HashSet<String> set = new HashSet<>();
+        HashSet<String> opSet = new HashSet<>();
         list = new ArrayList<>();
         int start = 0;
         for (int i = 0; i < expression.length(); i++) {
             if (expression.charAt(i) == '*' || expression.charAt(i) == '+' || expression.charAt(i) == '-') {
-                set.add(expression.substring(i, i + 1));
+                opSet.add(expression.substring(i, i + 1));
                 list.add(expression.substring(start, i));
                 list.add(expression.substring(i, i + 1));
                 start = i + 1;
@@ -24,11 +23,11 @@ public class 프로그래머스_수식최대화_2_김해린 {
             }
         }
 
-        String[] arr = new String[set.size()];
+        String[] arr = new String[opSet.size()];
         int idx = 0;
-        visited = new boolean[set.size()];
-        operator = new String[set.size()];
-        for (String string : set) {
+        visited = new boolean[opSet.size()];
+        operator = new String[opSet.size()];
+        for (String string : opSet) {
             arr[idx++] = string;
         }
         dfs(0, arr);
